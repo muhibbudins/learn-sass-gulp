@@ -1,0 +1,20 @@
+{
+  "name": "learn-sass-gulp",
+  "version": "1.0.0",
+  "description": "Learning about SASS with Gulp and Ruby",
+  "main": "gulpfile.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhibbudins/learn-sass-gulp.git"
+  },
+  "author": "Muhibbudin Suretno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muhibbudins/learn-sass-gulp/issues"
+  },
+  "homepage": "https://github.com/muhibbudins/learn-sass-gulp#readme"
+}
