@@ -1,0 +1,33 @@
+
+
+// Mixins
+@mixin borderRadius($round) {
+	-webkit-border-radius: $round;
+	-moz-border-radius: $round;
+	-o-border-radius: $round;
+	border-radius: $round;
+}
+@mixin centerAbsolute {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -50px;
+	margin-top: -50px;
+}
+
+.circle-1 {
+	width: 100px;
+	height: 100px;
+	background-color: #d9d9d9;
+	@include borderRadius(50%);
+	@include centerAbsolute;
+}
+
+// Extends
+.bulat-2 {
+	@extend .circle-1;
+	background-color: #93c47d;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+}

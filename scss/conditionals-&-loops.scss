@@ -1,0 +1,35 @@
+// If, For, Each & While
+$color  : red;
+$class  : col !default;
+$limit  : 2;
+$column : 12;
+
+.box {
+	@if color == blue {
+		color: blue;
+	} @else if $color == red {
+		color: red;
+	} @else {
+		color: green;
+	}
+}
+
+@for $i from 1 through $column {
+	.#{$class}-#{$i} {
+		width: percentage($i / $column);
+	}
+}
+
+@each $var in 1, 2 {
+	.number-#{$var} {
+		width: $var * 100 / 10;
+	}
+}
+
+@while $limit > 0 {
+	.numb_#{$limit} {
+		font-size: $limit;
+	}
+
+	$limit : $limit - 1;
+}

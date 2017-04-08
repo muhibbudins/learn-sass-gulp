@@ -1,0 +1,26 @@
+// List, Associative & 2 Dimention Array
+$list  : first second;
+$array : (one, "two", 3);
+$assoc : (0 : "one", 1 : "two");
+$multi : (container, 10, green),
+		 (box, 5, blue);
+
+// Access Array with Each
+@each $value in $list {
+	.list-#{$value} { content: '#{$value}'; }
+}
+
+@each $value in $array {
+	.array-#{$value} { content: '#{$value}'; }
+}
+
+@each $key, $value in $assoc {
+	.assoc-#{$key} { content: $value; }
+}
+
+@each $class, $padding, $color in $multi {
+	.multi_#{$class} {
+		padding: $padding;
+		color: $color;
+	}
+}

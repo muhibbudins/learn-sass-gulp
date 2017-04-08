@@ -1,0 +1,18 @@
+// Operator and Concatente
+$padding   : 9;
+$font-size : 12;
+$parent    : box;
+$child     : 'kotak';
+
+.container {
+	padding: $padding * 2;
+	font-size: $font-size - 1;
+}
+
+.#{$parent + '-' + $child} {
+	padding: $padding / 2 + 0.5;
+}
+
+##{$child} {
+	padding: $padding / 2 + 0.5;
+}

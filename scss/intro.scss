@@ -1,0 +1,22 @@
+// Variable
+$red   : #dd3527;
+$green : #bad83d;
+$blue  : #188aba;
+
+.box {
+	padding: 20px;
+	background-color: $red;
+
+	.box__inner {
+		padding: 10px;
+		background-color: $green;
+
+		&.--bordered {
+			border: 1px solid $blue;
+		}
+	}
+	.box__outer {
+		margin: 20px;
+		background-color: $blue;
+	}
+}
