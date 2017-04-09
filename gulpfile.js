@@ -8,6 +8,7 @@ var gulp       = require('gulp'),
     concat     = require('gulp-concat'),
     notify     = require('gulp-notify');
 
+/* Running gulp for development */
 gulp.task('default', function () {
   return gulp.src('./scss/*.scss')
   	.pipe(sourcemaps.init())
@@ -26,6 +27,7 @@ gulp.task('default', function () {
     }));
 });
 
+/* Running gulp for production */
 gulp.task('build', function () {
   return gulp.src('./scss/*.scss')
     .pipe(concat('bundle.scss'))
@@ -46,6 +48,7 @@ gulp.task('build', function () {
     }));
 });
 
+/* Watching all file SCSS */
 gulp.task('watch', function() {
 	gulp.watch(['./scss/*.scss', './scss/**/*.scss'], ['default']);
 });

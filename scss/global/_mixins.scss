@@ -1,0 +1,23 @@
+@mixin transition($ease) {
+	-webkit-transition: all $ease ease-in-out;
+	-moz-transition: all $ease ease-in-out;
+	-ms-transition: all $ease ease-in-out;
+	transition: all $ease ease-in-out;
+}
+
+@mixin radius($round) {
+	-webkit-border-radius: $round;
+	-moz-border-radius: $round;
+	-ms-border-radius: $round;
+	border-radius: $round;
+}
+
+@mixin interact($color, $background) {
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited {
+		color: $color;
+		background-color: $background;
+	}
+}

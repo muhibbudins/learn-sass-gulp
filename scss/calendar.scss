@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+@import "global/color";
+@import "global/mixins";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	color: $black;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $blue;
+	background-image: url("https://www.transparenttextures.com/patterns/flowers.png");
+	font-family: 'Dosis', sans-serif;
+}
+
+.calendar {
+	width: 360px;
+	height: auto;
+	display: block;
+	overflow: hidden;
+	user-select: none;
+	background-color: $white;
+	box-shadow: 0px 10px 15px 4px transparentize($black, 0.75);
+	@include radius(5px);
+
+
+	.calendar__head {
+		position: relative;
+		min-height: 130px;
+		background-image: url(http://www.seamentor.com/uploads/159c7294-411f-40d5-af83-757df7f82760.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		
+		.calendar__head-overlay {
+			padding: 10px;
+			position: absolute;
+			width: 100%;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			background-color: transparentize($dark, 0.6);
+
+		}
+		.calendar__weather {
+			color: $white;
+			position: relative;
+			width: 100px;
+		}
+
+		.calendar__weather-status {
+			padding: 20px 10px;
+
+			img {
+				width: 65%;
+				height: auto;
+				opacity: 0.6;
+			}
+		}
+		.calendar__weather-degree {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 14px;
+		}
+		.calendar__button {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			padding: 8px 16px;
+			font-size: 24px;
+			color: $white;
+			cursor: pointer;
+			@include radius(50%);
+		}
+	}
+	.calendar__nav {
+		width: 100%;
+		color: $white;
+		display: flex;
+		align-items: center;
+		background-color: $darkblue;
+
+		.calendar__nav-left,
+		.calendar__nav-right,
+		.calendar__nav-middle {
+			padding: 20px 24px;
+			cursor: pointer;
+			@include transition(0.3s);
+			@include interact($white, darken($darkblue, 3%));
+		}
+		.calendar__nav-middle {
+			width: 100%;
+			text-align: center;
+			font-size: 18px;
+			padding: 18px 0;
+		}
+	}	
+	.calendar__body {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 5px 10px;
+		position: relative;
+
+		&:before {
+			content: "2017";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -78px;
+			margin-left: -78px;
+			opacity: 0.2;
+			font-size: 96px;
+		}
+		.calendar__body-item {
+			margin: 2.5px;
+			font-size: 14px;
+			cursor: pointer;
+			position: relative;
+			width: calc(100% / 7 - 5px);
+			padding: 10px 10px 15px 10px;
+			@include radius(5px);
+			@include transition(0.2s);
+			@include interact($black, transparentize($black, 0.85));
+
+			&.--today {
+				background-color: $blue;
+				color: $white;
+			}
+			&.--event:after {
+				content: "";
+				padding: 5px;
+				background-color: transparentize($red, 0.4);
+				position: absolute;
+				right: 8px;
+				bottom: 8px;
+				@include radius(50%);
+			}
+		}
+	}
+}
